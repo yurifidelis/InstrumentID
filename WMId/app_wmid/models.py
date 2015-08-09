@@ -1,5 +1,5 @@
 from django.db import models
-import datetime                 # Para salvar data de criação de usuario
+import datetime                 # Para salvar data de criacao de usuario
 
 # Create your models here.
 class User(models.Model):
