@@ -1,5 +1,6 @@
 from django.db import models
 import datetime                 # Para salvar data de criacao de usuario
+import os
 
 # Create your models here.
 class User(models.Model):
@@ -47,6 +48,9 @@ class Track(models.Model):
     
     def __str__(self):           # __unicode__ on Python 2
         return self.title
+    
+    def filename(self):
+        return os.path.basename(self.file.name)
     
 class InstrumentClass(models.Model):
     name = models.CharField(max_length=255)

@@ -1,0 +1,43 @@
+{% if track %}
+<h1>{{ track.title }}</h1>
+<ul>
+	<li>Album: <a href="{% url 'album' track.album.id %}">
+		{{ track.album }}</a></li>
+	<li>Position: {{ track.position }}</li>
+	<li>File name: <em>{{ track.filename }}</em></li>
+	<li>Duration: {{ track.duration }}</li>
+</ul>
+{% endif %}
+
+{% if album %}
+<div style="float:left; margin:20px">
+	<img src='{{ album.coverURL }}' height=200 />
+</div>
+
+<div style="margin-left: 50px;">
+	<h1>{{ album.title }}</h1>
+	<h3>Details:</h3>
+	<ul style="list-style-type: none">
+		<li>Artist: <a href="{% url 'artist' album.artist.id %}">{{ album.artist }}</a></li>
+		<li>Year: {{ album.year }}</li>
+		<li>Cover URL: <em>{{ album.coverURL }}</em></li>
+	</ul>
+
+	<h3>Tracks:</h3>
+	<ul>
+	{% for t in album_track_list %}
+		<li>{{ t.position }} - <a href="{% url 'track' t.id %}">{{ t.title }}</a></li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+</div>
+
+{% if artist %}
+<h1>{{ artist.name }}</h1>
+<h3>Albums by {{ artist.name }}:</h3>
+<ul>
+{% for a in artist_albums_list %}
+	<li><a href="{% url 'album' a.id %}">{{ a.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

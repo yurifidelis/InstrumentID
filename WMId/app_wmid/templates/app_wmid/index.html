@@ -1,0 +1,21 @@
+{% if latest_tracks_list %}
+	<h1>Últimas faixas</h1>
+    <ul>
+    {% for track in latest_tracks_list %}
+        <li><a href="/app_wmid/track/{{ track.id }}/">{{ track.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no tracks</p>
+{% endif %}
+
+{% if latest_albums_list %}
+	<h1>Últimos albums</h1>
+    <ul>
+    {% for album in latest_albums_list %}
+        <li><a href="/app_wmid/album/{{ album.id }}/">{{ album.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no tracks</p>
+{% endif %}
