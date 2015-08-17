@@ -7,6 +7,9 @@
 	<li>File name: <em>{{ track.filename }}</em></li>
 	<li>Duration: {{ track.duration }}</li>
 </ul>
+
+<a href="/app_wmid/track/{{ track.id }}/edit/">Edit</a>
+
 {% endif %}
 
 {% if album %}
@@ -29,8 +32,8 @@
 		<li>{{ t.position }} - <a href="{% url 'track' t.id %}">{{ t.title }}</a></li>
 	{% endfor %}
 	</ul>
-	{% endif %}
 </div>
+{% endif %}
 
 {% if artist %}
 <h1>{{ artist.name }}</h1>

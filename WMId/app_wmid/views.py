@@ -35,4 +35,21 @@ def artist(request, artist_id):
     return render(request, 'app_wmid/detail.html', context)
     
 def search(request, search_query):
-    return render(request, 'app_wmid/search.html', {'search_query':search_query})    
+    return render(request, 'app_wmid/search.html', {'search_query':search_query})
+    
+def edit_track(request, track_id):
+    track = get_object_or_404(Track, pk=track_id)
+    return render(request, 'app_wmid/edit.html', {'track':track})
+    
+def save_track(request, track_id):
+    track = get_object_or_404(Track, pk=track_id)
+    if request.method == 'POST':
+        track_album = request.POST['track_album']
+        track_position = request.POST['track_position']
+        track_duration = request.POST['track_duration']
+        
+        # if Album.objects.filter(title__exact = track_album).exists():
+        #     track.album = Album.objects.get(title = track_album)
+        # else:
+        #     new_album =
+            

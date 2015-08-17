@@ -14,4 +14,9 @@ urlpatterns = [
     # ex: /app_wmid/search/query/
     url(r'^search/(?P<search_query>\w+)/$', views.search, name='search'), 
     #url(r'^search/?q=(?P<search_query>\w+)$', views.search, name='search'), 
+    
+    # edit track
+    url(r'^track/(?P<track_id>[0-9]+)/edit/$', views.edit_track, name='edit_track'),
+    # save track
+    url(r'^track/(?P<track_id>[0-9]+)/save/$', views.save_track, name='save_track'),
 ]

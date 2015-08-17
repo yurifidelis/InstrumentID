@@ -1,0 +1,20 @@
+<h1>Edit "{{ track.title }}"</h1>
+
+<form action="{% 'save_track' track.id %}" method="post">
+	
+{% csrf_token %}
+<label for="track_title">Title: </label>
+<input type="text" name="track_title" id="track_title" value="{{ track.title }}">
+
+<label for="track_album">Album: </label>
+<input type="text" name="track_album" id="track_album" value="{{ track.album }}">
+
+<label for="track_position">Position: </label>
+<input type="text" value="{{ track.position }}" name="track_position" id="track_position" >
+
+<label for="track_duration">Duration: </label>
+<input type="text" value="{{ track.duration }}" name="track_duration"></p>
+
+<input type="submit" value="Save">
+
+</form>
