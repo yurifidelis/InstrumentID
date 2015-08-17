@@ -28,7 +28,7 @@ class Artist(models.Model):
 
 class Album(models.Model):
     artist = models.ForeignKey(Artist)
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, unique=True)
     year = models.IntegerField()
     coverURL = models.CharField(max_length=255, null=True, blank=True)
     
@@ -45,6 +45,7 @@ class Track(models.Model):
     title = models.CharField(max_length=255)
     position = models.IntegerField()
     duration = models.DurationField()
+    is_instrumental = models.BooleanField(default=False)
     
     def __str__(self):           # __unicode__ on Python 2
         return self.title
