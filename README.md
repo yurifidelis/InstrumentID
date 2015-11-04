@@ -1,4 +1,4 @@
-# WaveletsMusicID
+# InstrumentID
 Software web para identificação de instrumentos musicais pela transformada de wavelets.
 
 Implementação do trabalho [documentado](https://github.com/yurifidelis/ArtigoAnaliseAudio) para o Trabalho de Conclusão de Curso, de Análise e Desenvolvimento de Sistemas do IFSP, campus Campos do Jordão.
