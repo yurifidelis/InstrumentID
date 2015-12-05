@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_ROOT = '/Users/yuri/Sites/WaveletsMusicID/WMId/media/'
+MEDIA_ROOT = '/Users/yuri/Sites/MusicID/WMId/media/'
 MEDIA_URL = '/media/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -37,9 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'durationfield',
     'app_wmid',
-    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,11 +78,12 @@ WSGI_APPLICATION = 'WMId.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_wmid',
+        'NAME': 'django_mid',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
         'PORT': '8889'
+        #'PORT': '8000'
     }
 }
 
