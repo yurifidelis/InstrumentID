@@ -42,7 +42,6 @@ class UserLibrary(models.Model):
 
 class Track(models.Model):
     album = models.ForeignKey(Album)
-    file = models.FileField(upload_to='uploads',null=True)
     title = models.CharField(max_length=255)
     position = models.IntegerField()
     duration = models.DurationField()
@@ -62,6 +61,7 @@ class InstrumentClass(models.Model):
 
 class Instrument(models.Model):
     instrument_class = models.ForeignKey(InstrumentClass)
+    file = models.FileField(upload_to='uploads',null=True)
     track = models.ForeignKey(Track)
     start_time = models.FloatField()
     end_time = models.FloatField()
