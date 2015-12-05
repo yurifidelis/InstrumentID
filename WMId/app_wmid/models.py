@@ -1,5 +1,5 @@
 from django.db import models
-#from durationfield.db.models.fields.duration import DurationField
+from durationfield.db.models.fields.duration import DurationField
 import datetime                 # Para salvar data de criacao de usuario
 import os
 
@@ -44,7 +44,7 @@ class Track(models.Model):
     album = models.ForeignKey(Album)
     title = models.CharField(max_length=255)
     position = models.IntegerField()
-    duration = models.DurationField()
+    duration = DurationField()
     is_instrumental = models.BooleanField(default=False)
     
     def __str__(self):           # __unicode__ on Python 2
