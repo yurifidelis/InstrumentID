@@ -1,5 +1,4 @@
 from django.db import models
-from durationfield.db.models.fields.duration import DurationField
 import datetime                 # Para salvar data de criacao de usuario
 import os
 
@@ -45,7 +44,7 @@ class Track(models.Model):
     file = models.FileField(upload_to='uploads',null=True)
     title = models.CharField(max_length=255)
     position = models.IntegerField()
-    duration = DurationField()
+    duration = model.DurationField()
     is_instrumental = models.BooleanField(default=False)
     
     def __str__(self):           # __unicode__ on Python 2
