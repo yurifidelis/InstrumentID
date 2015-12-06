@@ -2,10 +2,49 @@
 
 {% block content %}
 
-{% load staticfiles %}
+<!-- Upload e Filtros -->
+<div style="position:relative;clear:both; margin-bottom: 60px;">
+<div id="upload">
+	<button name="upload">Fazer upload de arquivo</button>
+</div>
+<form action="index_submit" method="get" accept-charset="utf-8">
+	
+<div id="filtros">
+	<h4>Filtros</h4>
+	<span>Exibir conteúdo de:</span>
+	<select>
+		<option value="instrumental_yes">Música instrumental</option>
+		<option value="instrumental_no">Música com vocais</option>
+	</select><br />
+	
+	<span>Ordenar por:</span>
+	<select>
+		<option value="album">Album</option>
+		<option value="title">Título</option>
+		<option value="year">Ano</option>
+		<option value="artist">Artista</option>
+		<option value="duration">Duração</option>
+	</select><br />
 
-<link rel="stylesheet" type="text/css" href="{% static 'app_wmid/style.css' %}" />
+{% if instrument_classes %}	
+	<span>Músicas contendo os instrumentos:</span><br />
+	{% for instrument in instrument_classes %}
+		<div class="check">
+		<input type="checkbox" name="{{ instrument.name }}" value="{{ instrument.id }}">{{ instrument.name }}
+		</div>
+	{% endfor %}
+	<div style="clear:both"></div>
+{% else %}
+	<span>Nenhuma classe de instrumento.</span>
+{% endif %}
 
+	<p><input type="submit" value="Filtrar"></p>
+</form>
+
+</div>
+</div>
+
+<div id="tracks">
 {% if latest_tracks_list %}
 	<h1>Últimas faixas</h1>
     <ul>
@@ -27,5 +66,6 @@
 {% else %}
     <p>There are no tracks</p>
 {% endif %}
+</div>
 
 {% endblock content %}

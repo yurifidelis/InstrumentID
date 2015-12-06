@@ -1,3 +1,60 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
 li a {
 	color: green;
+}
+
+div#sidebar {
+	float: left;
+	margin-left: 10px;
+}
+
+#sidebar > ul {
+	padding-left: 10px;
+	list-style-type: none;
+}
+
+div#content {
+	position: relative;
+	top: -80px;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Upload e filtros */
+div#upload {
+	width: 200px;
+	float: left;
+}
+
+div#filtros {
+	position: relative;
+	height: auto;
+	width: 400px;
+	float: left;
+	top:-15px;
+}
+
+#filtros span {
+	text-align: right;
+	line-height: 200%;
+}
+
+#filtros .check {
+	float: left;
+	display: block;
+	margin-right: 25px;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+}
+
+div#tracks {
+	position: relative;
+	top: 30px;
+	height: auto;
+	clear:both;
 }

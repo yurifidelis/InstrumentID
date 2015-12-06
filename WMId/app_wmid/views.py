@@ -2,14 +2,16 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 
-from .models import Track, Album, Artist
+from .models import Track, Album, Artist, InstrumentClass
 
 def index(request):
     # Teste: ultimas faixas adicionadas na home
     latest_tracks_list = Track.objects.order_by('title')[:5]
     latest_albums_list = Album.objects.order_by('title')[:5]
+    instrument_classes = InstrumentClass.objects.all()
     context = { 'latest_tracks_list': latest_tracks_list,
-                'latest_albums_list': latest_albums_list}
+                'latest_albums_list': latest_albums_list,
+                'instrument_classes': instrument_classes}
     return render(request, 'app_wmid/index.html', context)
     
 def track(request, track_id):
