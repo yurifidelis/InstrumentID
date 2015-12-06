@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 
-from .models import Track, Album, Artist #teste
+from .models import Track, Album, Artist
 
 def index(request):
     # Teste: ultimas faixas adicionadas na home
