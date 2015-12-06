@@ -1,6 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'app_wmid/style.css' %}" />
+
 {% if latest_tracks_list %}
 	<h1>Últimas faixas</h1>
     <ul>
@@ -22,3 +27,5 @@
 {% else %}
     <p>There are no tracks</p>
 {% endif %}
+
+{% endblock content %}
